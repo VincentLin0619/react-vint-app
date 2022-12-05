@@ -1,11 +1,13 @@
 import React from "react";
-import { Navbar } from "../components/Navbar";
+import MainMenu from "../components/NavBar/MainMenu";
+import SubMenu from "../components/NavBar/SubMenu";
 import "./Home.scss";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
+      <MainMenu />
+      <SubMenu />
     </div>
   );
 };
