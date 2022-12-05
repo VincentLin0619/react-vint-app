@@ -56,3 +56,9 @@
     cursor: pointer;
   }
 }
+.calendar {
+  position: absolute; //這邊一樣用絕對定位讓他超出container往下
+  top: 56px;
+  border: 1px lightgray solid;
+  box-shadow: 0px 0px 15px lightgray;
+}
