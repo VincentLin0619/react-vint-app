@@ -1,3 +1,4 @@
+// headerSearchBar===================
 .headerSearchBar {
   position: absolute;
   bottom: -50px;
@@ -26,24 +27,26 @@
   .searchBarItem:first-child {
     width: calc(34% - 20px);
   }
-  .searchBarItem {
-    display: flex;
-    height: 50px;
-    width: 320px;
-    margin-left: 2px;
-    align-items: center;
-    gap: 10px;
-    color: black;
-    background-color: #fff;
-    border-radius: 2px;
-    cursor: pointer;
-    // .searchText {
-    //   width: 100%;
-    //   display: block;
-    //   overflow: hidden;
-    //   white-space: nowrap;
-    //   text-overflow: ellipsis;
-    // }
+  @for $i from 0 to 4 {
+    .searchBarItem-#{$i} {
+      display: flex;
+      height: 50px;
+      width: 320px;
+      margin-left: 2px;
+      align-items: center;
+      gap: 10px;
+      color: black;
+      background-color: #fff;
+      border-radius: 2px;
+      cursor: pointer;
+      // .searchText {
+      //   width: 100%;
+      //   display: block;
+      //   overflow: hidden;
+      //   white-space: nowrap;
+      //   text-overflow: ellipsis;
+      // }
+    }
   }
   .searchBarBtn {
     border: none;
@@ -56,9 +59,57 @@
     cursor: pointer;
   }
 }
+// ==================================================
+
+// calendar區塊(日期選取表單)===========================
 .calendar {
   position: absolute; //這邊一樣用絕對定位讓他超出container往下
   top: 56px;
   border: 1px lightgray solid;
   box-shadow: 0px 0px 15px lightgray;
 }
+// ==================================================
+
+// condition區塊（人數房間選取表單）============================
+.searchBarItem-3 {
+  position: relative;
+}
+.conditionsContainer {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px lightgrey;
+  border-radius: 5px;
+  padding: 10px 40px;
+  .condition {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    height: 60px;
+  }
+  .conditionCounter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    button {
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+      color: var(--primary-color);
+      background-color: white;
+      border: 1px solid var(--primary-color);
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(53, 164, 127, 0.1);
+      }
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+// ==================================================
