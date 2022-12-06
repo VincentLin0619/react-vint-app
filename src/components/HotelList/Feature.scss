@@ -1,0 +1,40 @@
+.feature {
+  width: 100%;
+  height: auto;
+  display: block;
+  justify-content: center;
+  .listTitle {
+    padding: 10px;
+  }
+  .container {
+    width: 100%;
+    align-items: center;
+    // max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    .item {
+      width: 90%;
+      display: block;
+      padding: 10px;
+      .itemInfo {
+        height: 100%;
+        display: block;
+        img {
+          width: 100%;
+          height: 150px;
+          min-height: 50px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+        .title {
+          font-size: 0.75rem;
+        }
+        .desc {
+          font-size: 0.5rem;
+          color: dimgrey;
+        }
+      }
+    }
+  }
+}

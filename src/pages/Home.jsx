@@ -4,6 +4,8 @@ import SubMenu from "../components/NavBar/SubMenu";
 import "./Home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import Feature from "../components/HotelList/Feature";
+import { CategoriesCities, CategoriesType } from "../data";
 
 const Home = () => {
   return (
@@ -32,6 +34,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Feature dataArray={CategoriesType} title="依住宿類型瀏覽" />
+      <Feature
+        dataArray={CategoriesCities}
+        title="探索台灣"
+        des="這些熱門景點，等你來探索！"
+      />
     </div>
   );
 };
