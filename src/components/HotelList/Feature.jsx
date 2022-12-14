@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 const Feature = ({ dataArray, title, des }) => {
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     autoplay: true,
     autoplaySpeed: 2000,
+    adaptiveHeight: true,
     speed: 1000,
     slidesToShow: 5, // 一次顯示幾張
     slidesToScroll: 3, // 按下一頁的時候，要跑幾張
@@ -55,10 +56,8 @@ const Feature = ({ dataArray, title, des }) => {
         {dataArray.map((item, index) => (
           <div className="item" key={index}>
             <img src={item.img} alt="" />
-            <div className="itemInfo">
-              <p className="itemTitle">{item.name}</p>
-              <span className="itemDesc">{item.amount}</span>
-            </div>
+            <p className="itemTitle">{item.name}</p>
+            <span className="itemDesc">{item.amount}</span>
           </div>
         ))}
       </Slider>
