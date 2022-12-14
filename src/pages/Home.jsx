@@ -34,12 +34,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Feature dataArray={CategoriesType} title="依住宿類型瀏覽" />
-      <Feature
-        dataArray={CategoriesCities}
-        title="探索台灣"
-        des="這些熱門景點，等你來探索！"
-      />
+      <div className="">
+        <Feature dataArray={CategoriesType} title="依住宿類型瀏覽" />
+        <Feature
+          dataArray={CategoriesCities}
+          title="探索台灣"
+          des="這些熱門目的地魅力無窮，等你來體驗！"
+        />
+      </div>
     </div>
   );
 };
