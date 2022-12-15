@@ -12,7 +12,7 @@ const Feature = ({ dataArray, title, des }) => {
     autoplaySpeed: 2000,
     adaptiveHeight: true,
     speed: 1000,
-    slidesToShow: 5, // 一次顯示幾張
+    slidesToShow: 6, // 一次顯示幾張
     slidesToScroll: 3, // 按下一頁的時候，要跑幾張
     initialSlide: 0,
     responsive: [
@@ -56,8 +56,10 @@ const Feature = ({ dataArray, title, des }) => {
         {dataArray.map((item, index) => (
           <div className="item" key={index}>
             <img src={item.img} alt="" />
-            <p className="itemTitle">{item.name}</p>
-            <span className="itemDesc">{item.amount}</span>
+            <div className="itemInfo">
+              <p className="itemTitle">{item.name}</p>
+              <span className="itemDesc">{item.amount}</span>
+            </div>
           </div>
         ))}
       </Slider>

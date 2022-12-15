@@ -50,8 +50,10 @@ const Home = () => {
         />
       </div>
       <div>
-        <PopularHotels dataArray={PopularHotelsData} />
         <PostCard dataArray={Attractions} />
+      </div>
+      <div>
+        <PopularHotels dataArray={PopularHotelsData} />
       </div>
     </div>
   );

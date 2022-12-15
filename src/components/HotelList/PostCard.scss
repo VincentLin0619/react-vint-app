@@ -1,13 +1,15 @@
 .postCard {
   position: relative;
   .cardInfo {
+    display: block;
     position: absolute;
     z-index: 0;
     color: ghostwhite;
     text-shadow: 2px 2px 2px black;
-    left: 50px;
-    top: 30px;
+    left: 10%;
+    top: 5%;
     h1 {
+      font-size: 1.75rem;
       display: flex;
       align-items: center;
       .cardFlag {
@@ -21,8 +23,9 @@
   }
   img {
     width: 99%;
+    height: 100%;
     object-fit: cover;
-    overflow: hidden;
+    // overflow: hidden;
     padding: 0px 10px 0px 10px;
     z-index: 1;
   }
