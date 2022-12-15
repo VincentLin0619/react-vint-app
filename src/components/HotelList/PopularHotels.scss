@@ -1,0 +1,50 @@
+.pItem {
+  img {
+    height: 50vh;
+    width: 90%;
+    object-fit: cover;
+    margin: 3px 10px;
+    border-radius: 10px;
+  }
+  .itemInfo {
+    margin: 3px 10px;
+    .pTitle {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .pSubTitle {
+      font-size: 0.075rem;
+      font-weight: 900;
+      color: cadetblue;
+    }
+    .pPrice {
+      font-weight: 700;
+    }
+    .pRate {
+      align-items: center;
+      display: flex;
+      gap: 5px;
+      p {
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: gray;
+      }
+      span {
+        color: black;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        height: 30px;
+        width: 30px;
+        border: none;
+        background-color: var(--primary-color);
+        border-radius: 5px 5px 5px 0px;
+      }
+    }
+  }
+}

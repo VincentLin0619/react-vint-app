@@ -1,0 +1,29 @@
+.postCard {
+  position: relative;
+  .cardInfo {
+    position: absolute;
+    z-index: 0;
+    color: ghostwhite;
+    text-shadow: 2px 2px 2px black;
+    left: 50px;
+    top: 30px;
+    h1 {
+      display: flex;
+      align-items: center;
+      .cardFlag {
+        width: auto;
+        height: 100%;
+      }
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
+  img {
+    width: 99%;
+    object-fit: cover;
+    overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    z-index: 1;
+  }
+}

@@ -5,7 +5,14 @@ import "./Home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Feature from "../components/HotelList/Feature";
-import { CategoriesCities, CategoriesType } from "../data";
+import {
+  Attractions,
+  CategoriesCities,
+  CategoriesType,
+  PopularHotelsData,
+} from "../data";
+import { PopularHotels } from "../components/HotelList/PopularHotels";
+import { PostCard } from "../components/HotelList/PostCard";
 
 const Home = () => {
   return (
@@ -41,6 +48,10 @@ const Home = () => {
           title="探索台灣"
           des="這些熱門目的地魅力無窮，等你來體驗！"
         />
+      </div>
+      <div>
+        <PopularHotels dataArray={PopularHotelsData} />
+        <PostCard dataArray={Attractions} />
       </div>
     </div>
   );
