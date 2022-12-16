@@ -16,7 +16,7 @@ import { PostCard } from "../components/HotelList/PostCard";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <MainMenu />
       <SubMenu />
       <div className="announcementContainer">

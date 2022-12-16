@@ -9,13 +9,14 @@ export const PostCard = ({ dataArray }) => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const settings1 = {
+    arrows: false,
     dots: false,
     infinite: false,
-    // adaptiveHeight: true,
+    adaptiveHeight: true,
+    className: "postCardList",
     speed: 1000,
     slidesToShow: 2, // 一次顯示幾張
     slidesToScroll: 2, // 按下一頁的時候，要跑幾張
-
     responsive: [
       {
         breakpoint: 1024,
@@ -47,9 +48,11 @@ export const PostCard = ({ dataArray }) => {
     ],
   };
   const settings2 = {
+    arrows: false,
     dots: false,
     infinite: false,
     adaptiveHeight: true,
+    className: "postCardList",
     speed: 1000,
     slidesToShow: 3, // 一次顯示幾張
     slidesToScroll: 3, // 按下一頁的時候，要跑幾張
@@ -85,7 +88,7 @@ export const PostCard = ({ dataArray }) => {
     ],
   };
   return (
-    <div>
+    <>
       <Slider {...settings1} asNavFor={nav1} ref={(slider) => setNav1(slider)}>
         {dataArray.slice(0, 2).map((item, index) => (
           <div className="postCard" key={index}>
@@ -114,6 +117,6 @@ export const PostCard = ({ dataArray }) => {
           </div>
         ))}
       </Slider>
-    </div>
+    </>
   );
 };

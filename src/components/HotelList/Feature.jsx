@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Feature = ({ dataArray, title, des }) => {
   const settings = {
+    arrows: false,
+    className: "feature",
     dots: false,
     infinite: false,
     autoplay: true,
@@ -46,7 +48,7 @@ const Feature = ({ dataArray, title, des }) => {
     ],
   };
   return (
-    <div className="container">
+    <>
       <div className="title">
         <h1>{title}</h1>
         <span>{des}</span>
@@ -63,7 +65,7 @@ const Feature = ({ dataArray, title, des }) => {
           </div>
         ))}
       </Slider>
-    </div>
+    </>
   );
 };
 

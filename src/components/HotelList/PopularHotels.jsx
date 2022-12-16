@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const PopularHotels = ({ dataArray, title, des }) => {
   const settings = {
+    className: "popularHotels",
+    arrows: false,
     dots: false,
     infinite: false,
     autoplay: true,
@@ -46,7 +48,7 @@ export const PopularHotels = ({ dataArray, title, des }) => {
     ],
   };
   return (
-    <div className="popularHotels">
+    <>
       <div className="title">
         <h1>人氣民宿、公寓類型住宿</h1>
       </div>
@@ -68,6 +70,6 @@ export const PopularHotels = ({ dataArray, title, des }) => {
           </div>
         ))}
       </Slider>
-    </div>
+    </>
   );
 };
