@@ -62,13 +62,41 @@
 
 // calendar區塊(日期選取表單)===========================
 .calendar {
-  position: absolute; //這邊一樣用絕對定位讓他超出container往下
-  top: 56px;
+  position: relative; //這邊一樣用絕對定位讓他超出container往下
   border: 1px lightgray solid;
   box-shadow: 0px 0px 15px lightgray;
 }
-@media screen {
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.close {
+  position: absolute;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 // ==================================================
 
 // condition區塊（人數房間選取表單）============================
