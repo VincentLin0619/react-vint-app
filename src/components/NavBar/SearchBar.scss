@@ -27,7 +27,7 @@
   .searchBarItem:first-child {
     width: calc(34% - 20px);
   }
-  @for $i from 0 to 3 {
+  @for $i from 0 to 4 {
     .searchBarItem-#{$i} {
       display: flex;
       height: 50px;
@@ -61,11 +61,6 @@
 // ==================================================
 
 // calendar區塊(日期選取表單)===========================
-.calendar {
-  position: relative; //這邊一樣用絕對定位讓他超出container往下
-  border: 1px lightgray solid;
-  box-shadow: 0px 0px 15px lightgray;
-}
 /* The Modal (background) */
 .modal {
   position: fixed;
@@ -79,22 +74,55 @@
   justify-content: center;
   align-items: center;
 }
-.close {
-  position: absolute;
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  top: 0;
-  right: 0;
-  z-index: 9;
+.calendar {
+  position: absolute; //這邊一樣用絕對定位讓他超出container往下
+  border: 1px lightgray solid;
+  box-shadow: 1px 3px 5px #aaa;
+  top: 20vh;
+  margin: auto;
+  z-index: 999;
 }
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+#close {
+  top: 12%;
+  overflow: hidden;
+  position: absolute;
+  border: none;
+  padding: 0;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: whitesmoke;
+  opacity: 0.9;
+  color: #aaa;
+  font: inherit;
+  text-indent: 100%;
   cursor: pointer;
+
+  &:focus {
+    outline: solid 0 transparent;
+    box-shadow: 0 0 0 2px #8ed0f9;
+  }
+
+  &:hover {
+    background: rgba(29, 161, 142, 0.1);
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 0.0625em);
+    width: 0.125em;
+    height: 70%;
+    border-radius: 0.125em;
+    transform: rotate(45deg);
+    background: currentcolor;
+    content: "";
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
 }
 
 // ==================================================
@@ -105,8 +133,7 @@
 }
 .conditionsContainer {
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 60px;
   width: auto;
   background-color: #fff;
   box-shadow: 0px 0px 15px lightgrey;
