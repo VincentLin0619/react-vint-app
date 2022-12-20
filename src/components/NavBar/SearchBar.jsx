@@ -1,14 +1,15 @@
 import React from "react";
+import { ReactDOM } from "react-dom/client";
+import { useState } from "react";
 import {
   faBed,
   faCalendar,
   faPeopleGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./SearchBar.scss";
-import { useState } from "react";
-
 import format from "date-fns/format";
+
+import "./SearchBar.scss";
 
 export const SearchBar = () => {
   // 日期狀態開關、資料
@@ -50,18 +51,6 @@ export const SearchBar = () => {
         />
       </div>
       <div className="searchBarItem-2">
-        <FontAwesomeIcon
-          icon={faCalendar}
-          onClick={() => setOpenCalendar(true)}
-        />
-        {""}
-
-        <span className="searchText">
-          {format(dates[0].startDate, "MM/dd/yy")} -{" "}
-          {format(dates[0].endDate, "MM/dd/yy")}
-        </span>
-      </div>
-      <div className="searchBarItem-3">
         <FontAwesomeIcon
           icon={faPeopleGroup}
           onClick={() => setOpenConditions(!openConditions)}
@@ -123,6 +112,17 @@ export const SearchBar = () => {
           </div>
         )}
       </div>
+
+      {/* <FontAwesomeIcon
+          icon={faCalendar}
+          onClick={() => setOpenCalendar(true)}
+        /> */}
+
+      {/* <span className="searchText">
+          {format(dates[0].startDate, "MM/dd/yy")} -{" "}
+          {format(dates[0].endDate, "MM/dd/yy")}
+        </span> */}
+
       <button className="searchBarBtn">搜尋</button>
     </div>
   );

@@ -27,7 +27,7 @@
   .searchBarItem:first-child {
     width: calc(34% - 20px);
   }
-  @for $i from 0 to 4 {
+  @for $i from 0 to 3 {
     .searchBarItem-#{$i} {
       display: flex;
       height: 50px;
