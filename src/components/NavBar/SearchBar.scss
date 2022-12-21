@@ -97,6 +97,7 @@
   font: inherit;
   text-indent: 100%;
   cursor: pointer;
+  z-index: 999;
 
   &:focus {
     outline: solid 0 transparent;

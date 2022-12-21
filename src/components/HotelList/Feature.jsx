@@ -48,7 +48,7 @@ const Feature = ({ dataArray, title, des }) => {
     ],
   };
   return (
-    <>
+    <div className="section-1">
       <div className="title">
         <h1>{title}</h1>
         <span>{des}</span>
@@ -65,7 +65,7 @@ const Feature = ({ dataArray, title, des }) => {
           </div>
         ))}
       </Slider>
-    </>
+    </div>
   );
 };
 

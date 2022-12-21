@@ -1,106 +1,19 @@
-// burger menu ===============================================
-// 把check按鈕隱藏起來
-#nav-toggle {
-  display: none;
-}
-.ham-bar-1 {
-  transform: translateY(-6px);
-}
-
-.ham-bar-2 {
-  transform: translateY(6px);
-}
-#nav-toggle:checked ~ .menu {
-  transform: none;
-}
-#nav-toggle:checked ~ .ham .ham-bar-1 {
-  opacity: 0;
-}
-
-#nav-toggle:checked ~ .ham .ham-bar-2 {
-  transform: rotate(-45deg);
-}
-
-#nav-toggle:checked ~ .ham .ham-bar-3 {
-  transform: rotate(45deg);
-}
-
-.ham {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.3);
-  display: block;
-
-  position: relative;
-  .ham-origin {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    .ham-bar {
-      height: 2px;
-      width: 26px;
-      position: absolute;
-      background: white;
-      margin: -1px 0 0 -13px;
-      transition: all 0.5s;
-    }
-    .ham-bar--top {
-      transform: translateY(-6px);
-    }
-
-    .ham-bar--bottom {
-      transform: translateY(6px);
-    }
-  }
-}
-.menu {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  padding: 50px;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  /* 用 translate 把選單藏到畫面左邊去 */
-  transform: translateX(-100%);
-  transition: transform 0.5s;
-  .menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    .menu-item {
-      .menu-link {
-        display: flex;
-        text-decoration: none;
-        left: 0;
-        gap: 10px;
-        color: lightgray;
-        &:hover {
-          color: cadetblue;
-          transition: 0.5s;
-        }
-      }
-      margin-top: 20px;
-    }
-  }
-}
-
-// ===========================================================
 .navbar {
   width: 100%;
-  height: 140px;
+  height: 80px;
   background-color: #333;
   display: flex;
   justify-content: center;
+  align-content: center;
   .navbarContainer {
     width: 90%;
     height: 100%;
     max-width: 1600px;
     color: white;
+    justify-content: center;
     .lineOne {
       display: flex;
-      height: 50%;
+      height: 100%;
       align-items: center;
       justify-content: space-between;
       .left {

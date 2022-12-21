@@ -48,7 +48,7 @@ export const PopularHotels = ({ dataArray, title, des }) => {
     ],
   };
   return (
-    <>
+    <div className="section-3">
       <div className="title">
         <h1>人氣民宿、公寓類型住宿</h1>
       </div>
@@ -70,6 +70,6 @@ export const PopularHotels = ({ dataArray, title, des }) => {
           </div>
         ))}
       </Slider>
-    </>
+    </div>
   );
 };

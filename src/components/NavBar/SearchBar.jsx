@@ -124,7 +124,7 @@ export const SearchBar = () => {
         />
         {openCalendar && (
           <div className="modal">
-            <button onClick={() => setOpenCalendar(!openCalendar)} id="close">
+            <button onClick={() => setOpenCalendar(false)} id="close">
               close
             </button>
             <DateRange
@@ -143,7 +143,7 @@ export const SearchBar = () => {
           </div>
         )}
 
-        <span className="searchText">
+        <span className="searchText" onClick={() => setOpenCalendar(true)}>
           {format(dates[0].startDate, "MM/dd/yy")} -{" "}
           {format(dates[0].endDate, "MM/dd/yy")}
         </span>

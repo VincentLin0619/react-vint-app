@@ -88,7 +88,7 @@ export const PostCard = ({ dataArray }) => {
     ],
   };
   return (
-    <>
+    <div className="section-2">
       <Slider {...settings1} asNavFor={nav1} ref={(slider) => setNav1(slider)}>
         {dataArray.slice(0, 2).map((item, index) => (
           <div className="postCard" key={index}>
@@ -117,6 +117,6 @@ export const PostCard = ({ dataArray }) => {
           </div>
         ))}
       </Slider>
-    </>
+    </div>
   );
 };

@@ -1,0 +1,20 @@
+#icon-position {
+  display: none;
+}
+.roll-top-btn {
+  font-size: 1.75rem;
+  display: flex;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  position: fixed;
+  z-index: 20;
+  color: black;
+  right: 25px;
+  bottom: 5vh;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
