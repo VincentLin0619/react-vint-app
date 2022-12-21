@@ -29,11 +29,11 @@
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 1);
   display: block;
   z-index: 10;
-  right: 25px;
-  bottom: 15vh;
+  right: 50px;
+  bottom: 110px;
   position: fixed;
   .ham-origin {
     position: absolute;
@@ -62,7 +62,7 @@
   top: 0;
   bottom: 0;
   padding: 50px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   z-index: 1;
   /* 用 translate 把選單藏到畫面左邊去 */
   transform: translateX(-100%);

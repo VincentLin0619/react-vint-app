@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainMenu.scss";
-import HamMenu from "./HamMenu";
-import { ScrollToTop } from "./ScrollToTop";
+import HamMenu from "./Button/HamMenu";
+import { ScrollToTop } from "./Button/ScrollToTop";
 
 const MainMenu = () => {
   return (
