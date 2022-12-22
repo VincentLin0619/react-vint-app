@@ -15,6 +15,7 @@ import { PopularHotels } from "../components/HotelList/PopularHotels";
 import { PostCard } from "../components/HotelList/PostCard";
 import { Discount } from "../components/Info/Discount";
 import GlobalDiscount from "../components/Info/GlobalDiscount";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
       />
       <PostCard dataArray={Attractions} />
       <PopularHotels dataArray={PopularHotelsData} />
+      <Footer />
     </div>
   );
 };

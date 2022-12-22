@@ -1,0 +1,89 @@
+.FooterTop {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  padding: 15px;
+  .FooterTitle {
+    color: aliceblue;
+    font-weight: 400;
+  }
+  .FooterContent {
+    color: black;
+  }
+  .FooterTitle,
+  .FooterContent {
+    align-self: center;
+  }
+  .FooterSubContainer {
+    margin: 20px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: center;
+    justify-items: center;
+    width: 60%;
+    gap: 5px;
+    input {
+      padding-left: 10px;
+      height: 30px;
+      border: 0px;
+      border-radius: 7px;
+      width: 60%;
+      height: 40px;
+    }
+    button {
+      height: 40px;
+      width: 40%;
+      color: aliceblue;
+      border: 0px;
+      background-color: darkgreen;
+    }
+  }
+  .subCheckBox {
+    display: flex;
+    gap: 5px;
+    align-self: center;
+    justify-content: center;
+    padding: 10px 0;
+    input {
+      width: 20px;
+    }
+  }
+}
+.FooterBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+  button {
+    padding: 15px 30px;
+    margin: 15px;
+    background-color: teal;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+  }
+}
+hr {
+  color: #fff;
+}
+.FooterInfo {
+  background-color: black;
+  ul {
+    display: flex;
+    padding: 30px 0px;
+    justify-content: center;
+    gap: 2rem;
+    li {
+      font-size: 14px;
+      list-style: none;
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .FooterInfo > ul {
+    display: block;
+    margin: 0px 15px;
+  }
+}
