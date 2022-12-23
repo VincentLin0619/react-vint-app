@@ -9,7 +9,7 @@ const MainMenu = () => {
       <div className="navbarContainer">
         <div className="lineOne">
           <div className="left">
-            <span>DEMO.BOOKING</span>
+            <a href="/">DEMO.BOOKING</a>
           </div>
           <div className="right">
             <div className="navBtnFlag"></div>

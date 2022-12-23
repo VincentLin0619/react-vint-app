@@ -24,9 +24,9 @@
     font-size: 1rem;
     text-overflow: ellipsis;
   }
-  .searchBarItem:first-child {
-    width: calc(34% - 20px);
-  }
+  // .searchBarItem:first-child {
+  //   width: calc(34% - 20px);
+  // }
   @for $i from 0 to 4 {
     .searchBarItem-#{$i} {
       display: flex;
@@ -58,6 +58,43 @@
     cursor: pointer;
   }
 }
+@media screen and (max-width < 600px) {
+  .headerSearchBar {
+    position: static;
+    flex-direction: column;
+    height: auto;
+    gap: 5px;
+  }
+  .SearchInput {
+    width: 100%;
+  }
+  .searchBarItem {
+    width: 100%;
+  }
+  @for $i from 0 to 4 {
+    .searchBarItem-#{$i} {
+      display: flex;
+      width: auto;
+      align-items: center;
+      gap: 10px;
+      color: black;
+      background-color: #fff;
+      border-radius: 2px;
+      cursor: pointer;
+      span {
+        font-size: 0.75rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .searchBarBtn {
+    min-width: 100%;
+    border: 3px solid rgb(223, 130, 0);
+    border-radius: 2px;
+  }
+}
 // ==================================================
 
 // calendar區塊(日期選取表單)===========================
@@ -75,7 +112,7 @@
   align-items: center;
 }
 .calendar {
-  position: absolute; //這邊一樣用絕對定位讓他超出container往下
+  position: absolute;
   border: 1px lightgray solid;
   box-shadow: 1px 3px 5px #aaa;
   top: 20vh;
