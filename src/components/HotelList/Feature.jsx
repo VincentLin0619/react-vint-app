@@ -9,7 +9,7 @@ const Feature = ({ dataArray, title, des }) => {
     arrows: false,
     className: "feature",
     dots: false,
-    infinite: false,
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
     adaptiveHeight: true,
