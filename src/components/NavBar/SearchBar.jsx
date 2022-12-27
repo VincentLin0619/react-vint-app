@@ -19,6 +19,11 @@ import * as locales from "react-date-range/dist/locale";
 export const SearchBar = () => {
   // 日期狀態開關、資料
   const [openCalendar, setOpenCalendar] = useState(false);
+  // 計算選擇的天數，共有幾個晚上
+  function selectRage(date1, date2) {
+    const dateSelected = (date2 - date1) / 1000 / 60 / 60 / 24;
+    return dateSelected;
+  }
   const [dates, setDates] = useState([
     { startDate: new Date(), endDate: new Date(), key: "selection" },
   ]);
@@ -122,32 +127,48 @@ export const SearchBar = () => {
           icon={faCalendar}
           onClick={() => setOpenCalendar(true)}
         />
-        {openCalendar && (
-          <div className="modal">
-            <button onClick={() => setOpenCalendar(false)} id="close">
-              close
-            </button>
-            <DateRange
-              editableDateInputs={true} //可以讓日期被選取並輸入等等的
-              onChange={(item) => setDates([item.selection])}
-              //onChange把紀錄到的改動都紀錄到state date 裡面我們暫存器就會有選好的日期範圍，等於是輸入到暫存器
-              //item.selection的概念就是讓他選擇上傳到key=selection的部分，因為
-              moveRangeOnFirstSelection={false}
-              className="calendar" //並記得classname scss styling導入
-              minDate={new Date()}
-              ranges={dates} //才可以選範圍並範圍更改會re-render useState的date等於這是個抓取date範圍並顯示在日曆上，等於是從暫存器輸入到日曆顯示上面
-              locale={locales["zhTW"]}
-              //最後這邊就是語言版本使用繁體中文zhTW概念
-              //就可以用到上面的import * as locales from 'react-date-range/dist/locale';
-            />
-          </div>
-        )}
-
         <span className="searchText" onClick={() => setOpenCalendar(true)}>
           {format(dates[0].startDate, "MM/dd/yy")} -{" "}
           {format(dates[0].endDate, "MM/dd/yy")}
         </span>
       </div>
+      {openCalendar && (
+        <div className="modal">
+          <div
+            className="modalMask"
+            onClick={() => setOpenCalendar(false)}
+          ></div>
+          <div className="modalContainer">
+            <DateRange
+              editableDateInputs={true} //可以讓日期被選取並輸入等等的
+              onChange={(item) => setDates([item.selection])}
+              moveRangeOnFirstSelection={false}
+              className="calendarTest"
+              minDate={new Date()}
+              ranges={dates}
+              locale={locales["zhTW"]}
+              onShownDateChange={true}
+              preventSnapRefocus={true}
+            />
+            <div className="searchFooter">
+              <span
+                className="selectorText"
+                onClick={() => setOpenCalendar(true)}
+              >
+                {format(dates[0].startDate, "yy/MM/dd")} -{"  "}
+                {format(dates[0].endDate, "yy/MM/dd")}
+                {"  "}共 {selectRage(dates[0].startDate, dates[0].endDate)} 晚
+              </span>
+              <button
+                onClick={() => setOpenCalendar(false)}
+                className="Finished"
+              >
+                完成
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <button className="searchBarBtn">搜尋</button>
     </div>
   );

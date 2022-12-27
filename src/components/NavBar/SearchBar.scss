@@ -24,9 +24,6 @@
     font-size: 1rem;
     text-overflow: ellipsis;
   }
-  // .searchBarItem:first-child {
-  //   width: calc(34% - 20px);
-  // }
   @for $i from 0 to 4 {
     .searchBarItem-#{$i} {
       display: flex;
@@ -98,7 +95,6 @@
 // ==================================================
 
 // calendar區塊(日期選取表單)===========================
-/* The Modal (background) */
 .modal {
   position: fixed;
   top: 0;
@@ -110,56 +106,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.calendar {
-  position: absolute;
-  border: 1px lightgray solid;
-  box-shadow: 1px 3px 5px #aaa;
-  top: 20vh;
-  margin: auto;
-  z-index: 999;
-}
-#close {
-  top: 12%;
-  overflow: hidden;
-  position: absolute;
-  border: none;
-  padding: 0;
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-  background: whitesmoke;
-  opacity: 0.9;
-  color: #aaa;
-  font: inherit;
-  text-indent: 100%;
-  cursor: pointer;
-  z-index: 999;
-
-  &:focus {
-    outline: solid 0 transparent;
-    box-shadow: 0 0 0 2px #8ed0f9;
-  }
-
-  &:hover {
-    background: rgba(29, 161, 142, 0.1);
-  }
-
-  &:before,
-  &:after {
+  .modalMask {
     position: absolute;
-    top: 15%;
-    left: calc(50% - 0.0625em);
-    width: 0.125em;
-    height: 70%;
-    border-radius: 0.125em;
-    transform: rotate(45deg);
-    background: currentcolor;
-    content: "";
-  }
 
-  &:after {
-    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    display: block;
+  }
+  .modalContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-self: center;
+    justify-self: center;
+  }
+  .searchFooter {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    gap: 3px;
+
+    .selectorText {
+      padding: 5px;
+      font-size: 0.8rem;
+      color: darkslategrey;
+    }
+    .Finished {
+      width: 100%;
+      height: 50px;
+      background-color: cornflowerblue;
+      color: #fff;
+      border: 0px;
+    }
   }
 }
 
