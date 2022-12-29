@@ -1,6 +1,7 @@
 import "./SubMenu.scss";
 import { React } from "react";
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from "../SearchBar/SearchBar";
+import "../SearchBar/SearchBar.scss";
 
 const SubMenu = () => {
   return (

@@ -5,4 +5,7 @@
 
 :root {
     --primary-color: rgb(53, 164, 127);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
