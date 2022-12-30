@@ -1,18 +1,19 @@
 .listContainer {
   height: 1000px;
   margin: 0 auto;
-}
-.listWrapper {
+  width: 100%;
   display: flex;
-  .listResult {
-  }
+}
+
+.listLeft {
+  display: block;
+  width: 20%;
+  margin: 15px;
   .listSearch {
+    padding: 20px;
     position: sticky;
-    top: 0px;
-    width: 15%;
-    padding: 15px;
+    top: 100px;
     left: 15px;
-    margin: 15px;
     border-radius: 15px;
     background-color: rgb(223, 130, 0);
     display: flex;
@@ -38,9 +39,19 @@
         font-size: 12px;
         padding: 5px;
       }
+      .searchBtn{
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 10px 0px;
+      }
     }
   }
 }
+
+
 .searchText {
   position: relative;
 }
@@ -62,6 +73,26 @@
     align-items: center;
     justify-content: center;
     border: none;
+  }
+}
+.listRight {
+  width: 80%;
+  margin: 15px;
+  .listResult {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .map{
+      padding: 10px 15px;
+      background-image: url("https://cf.bstatic.com/psb/capla/static/media/map-entry-point.6b01012a.png");
+      .mapBtn{
+        background-color: var(--primary-color);
+        border: none;
+        padding: 5px 10px;
+        color: #fff;
+      }
+    }
   }
 }
 .selectorResult {

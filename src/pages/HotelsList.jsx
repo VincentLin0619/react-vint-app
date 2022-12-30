@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import MainMenu from "../components/NavBar/MainMenu";
-import Footer from "../components/Footer/Footer";
-import { format } from "date-fns";
-import * as locales from "react-date-range/dist/locale";
-import { DateRange } from "react-date-range";
-import "./HotelsList.scss";
+import React, { useState } from 'react';
+import MainMenu from '../components/NavBar/MainMenu';
+import Footer from '../components/Footer/Footer';
+import { format } from 'date-fns';
+import * as locales from 'react-date-range/dist/locale';
+import { DateRange } from 'react-date-range';
+import './HotelsList.scss';
+import { SearchItem } from '../components/ListItem/SearchItem';
 
 const HotelsList = () => {
   // 日期狀態開關、資料
@@ -15,7 +16,7 @@ const HotelsList = () => {
     return dateSelected;
   }
   const [dates, setDates] = useState([
-    { startDate: new Date(), endDate: new Date(), key: "selection" },
+    { startDate: new Date(), endDate: new Date(), key: 'selection' },
   ]);
   // 人數狀態開關、資料、計算
   const [openConditions, setOpenConditions] = useState(false);
@@ -31,17 +32,17 @@ const HotelsList = () => {
       return {
         ...prev, // 解構為 [name]: sign
         [name]:
-          sign === "increase" ? conditions[name] + 1 : conditions[name] - 1,
+          sign === 'increase' ? conditions[name] + 1 : conditions[name] - 1,
       };
     });
   };
   // 想要去哪input
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState('');
   return (
     <div>
       <MainMenu />
       <div className="listContainer">
-        <div className="listWrapper">
+        <div className="listLeft">
           <div className="listSearch">
             <h1 className="listTitle">搜尋</h1>
             <div className="listItem">
@@ -63,8 +64,8 @@ const HotelsList = () => {
                 className="selectorText"
                 onClick={() => setOpenCalendar(true)}
               >
-                {format(dates[0].startDate, "yy/MM/dd")} -{"  "}
-                {format(dates[0].endDate, "yy/MM/dd")}
+                {format(dates[0].startDate, 'yy/MM/dd')} -{'  '}
+                {format(dates[0].endDate, 'yy/MM/dd')}
               </span>
               {openCalendar && (
                 <div className="modal">
@@ -80,7 +81,7 @@ const HotelsList = () => {
                       className="calendarTest"
                       minDate={new Date()}
                       ranges={dates}
-                      locale={locales["zhTW"]}
+                      locale={locales['zhTW']}
                       onShownDateChange={true}
                       preventSnapRefocus={true}
                     />
@@ -89,9 +90,9 @@ const HotelsList = () => {
                         className="selectorText"
                         onClick={() => setOpenCalendar(true)}
                       >
-                        {format(dates[0].startDate, "yy/MM/dd")} -{"  "}
-                        {format(dates[0].endDate, "yy/MM/dd")}
-                        {"  "}共{" "}
+                        {format(dates[0].startDate, 'yy/MM/dd')} -{'  '}
+                        {format(dates[0].endDate, 'yy/MM/dd')}
+                        {'  '}共{' '}
                         {selectRage(dates[0].startDate, dates[0].endDate)} 晚
                       </span>
                       <button
@@ -105,9 +106,9 @@ const HotelsList = () => {
                 </div>
               )}
               <span className="selectorResult">
-                {format(dates[0].startDate, "yy/MM/dd")} -{"  "}
-                {format(dates[0].endDate, "yy/MM/dd")}
-                {"  "}共 {selectRage(dates[0].startDate, dates[0].endDate)} 晚
+                {format(dates[0].startDate, 'yy/MM/dd')} -{'  '}
+                {format(dates[0].endDate, 'yy/MM/dd')}
+                {'  '}共 {selectRage(dates[0].startDate, dates[0].endDate)} 晚
               </span>
             </div>
             <div className="listItem">
@@ -127,7 +128,7 @@ const HotelsList = () => {
                 className="searchText"
                 onClick={() => setOpenConditions(true)}
               >
-                成人 {conditions.adult} 位，小孩 {conditions.child} 位，房間{" "}
+                成人 {conditions.adult} 位，小孩 {conditions.child} 位，房間{' '}
                 {conditions.room}
               </span>
               {openConditions && (
@@ -142,13 +143,13 @@ const HotelsList = () => {
                     成人
                     <div className="conditionCounter">
                       <button
-                        onClick={() => handleCounter("adult", "increase")}
+                        onClick={() => handleCounter('adult', 'increase')}
                       >
                         +
                       </button>
                       <span>{conditions.adult}</span>
                       <button
-                        onClick={() => handleCounter("adult", "decrease")}
+                        onClick={() => handleCounter('adult', 'decrease')}
                         disabled={conditions.adult <= 1}
                       >
                         -
@@ -159,13 +160,13 @@ const HotelsList = () => {
                     小孩
                     <div className="conditionCounter">
                       <button
-                        onClick={() => handleCounter("child", "increase")}
+                        onClick={() => handleCounter('child', 'increase')}
                       >
                         +
                       </button>
                       <span>{conditions.child}</span>
                       <button
-                        onClick={() => handleCounter("child", "decrease")}
+                        onClick={() => handleCounter('child', 'decrease')}
                         disabled={conditions.child <= 0}
                       >
                         -
@@ -175,12 +176,12 @@ const HotelsList = () => {
                   <div className="condition">
                     房間
                     <div className="conditionCounter">
-                      <button onClick={() => handleCounter("room", "increase")}>
+                      <button onClick={() => handleCounter('room', 'increase')}>
                         +
                       </button>
                       <span>{conditions.room}</span>
                       <button
-                        onClick={() => handleCounter("room", "decrease")}
+                        onClick={() => handleCounter('room', 'decrease')}
                         disabled={conditions.room <= 1}
                       >
                         -
@@ -190,8 +191,21 @@ const HotelsList = () => {
                 </div>
               )}
             </div>
+            <div className="listItem">
+              <button className="searchBtn">搜尋</button>
+            </div>
           </div>
-          <div className="listResult">搜尋結果</div>
+        </div>
+        <div className="listRight">
+          <div className="listResult">
+            <div className="resultTitle">
+              <h2>在台北找到505間房間</h2>
+            </div>
+            <div className="map">
+              <button className="mapBtn">在地圖上顯示</button>
+            </div>
+          </div>
+          <SearchItem />
         </div>
       </div>
       <Footer />
