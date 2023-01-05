@@ -205,6 +205,9 @@ const HotelsList = () => {
               <button className="mapBtn">在地圖上顯示</button>
             </div>
           </div>
+          <SearchItem active="active" />
+          <SearchItem />
+          <SearchItem />
           <SearchItem />
         </div>
       </div>

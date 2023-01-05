@@ -1,5 +1,5 @@
 .listContainer {
-  height: 1000px;
+  height: 100%;
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -39,7 +39,7 @@
         font-size: 12px;
         padding: 5px;
       }
-      .searchBtn{
+      .searchBtn {
         border: none;
         border-radius: 5px;
         font-size: 1.1rem;
@@ -50,7 +50,6 @@
     }
   }
 }
-
 
 .searchText {
   position: relative;
@@ -83,10 +82,10 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    .map{
+    .map {
       padding: 10px 15px;
-      background-image: url("https://cf.bstatic.com/psb/capla/static/media/map-entry-point.6b01012a.png");
-      .mapBtn{
+      background-image: url('https://cf.bstatic.com/psb/capla/static/media/map-entry-point.6b01012a.png');
+      .mapBtn {
         background-color: var(--primary-color);
         border: none;
         padding: 5px 10px;

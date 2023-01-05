@@ -1,9 +1,9 @@
 import React from 'react';
 import './SearchItem.scss';
 
-export const SearchItem = () => {
+export const SearchItem = ({ active }) => {
   return (
-    <div className="infoContainer">
+    <div className={`infoContainer ${active}`}>
       <div className="infoTitle">
         <div className="infoTitle_left">
           <h1>台南微醺文旅</h1>
@@ -33,9 +33,14 @@ export const SearchItem = () => {
           </div>
         </div>
         <div className="infoFooter_R">
-          <div className="infoFooter_R-top"></div>
-          <div className="infoFooter_R-medium"></div>
-          <div className="infoFooter_R-bottom"></div>
+          <div className="infoFooter_R-top">五晚、1位</div>
+          <div className="infoFooter_R-medium">
+            <b>TWD 4534</b>
+            <span>含稅與其他費用</span>
+          </div>
+          <div className="infoFooter_R-bottom">
+            <button>查看客房供應狀況</button>
+          </div>
         </div>
       </div>
     </div>
