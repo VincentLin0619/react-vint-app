@@ -1,20 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import { DateRange } from "react-date-range";
-import { useState } from "react";
+import { DateRange } from 'react-date-range';
+import { useState } from 'react';
 import {
   faBed,
   faCalendar,
   faPeopleGroup,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { format } from "date-fns";
-import * as locales from "react-date-range/dist/locale";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { format } from 'date-fns';
+import * as locales from 'react-date-range/dist/locale';
+import { useNavigate } from 'react-router-dom';
 //用它來叫出不同版本的語言翻譯，把日曆換成中文
 
 export const SearchBar = () => {
+  // 使用useNavigate傳輸資料與跳轉
+  const navigate = useNavigate();
+  const handleSearchBarSubmit = () => {
+    navigate('/HotelsList', { state: { destination, dates, conditions } });
+  };
   // 日期狀態開關、資料
   const [openCalendar, setOpenCalendar] = useState(false);
   // 計算選擇的天數，共有幾個晚上
@@ -23,7 +29,7 @@ export const SearchBar = () => {
     return dateSelected;
   }
   const [dates, setDates] = useState([
-    { startDate: new Date(), endDate: new Date(), key: "selection" },
+    { startDate: new Date(), endDate: new Date(), key: 'selection' },
   ]);
   // 人數狀態開關、資料、計算
   const [openConditions, setOpenConditions] = useState(false);
@@ -39,12 +45,13 @@ export const SearchBar = () => {
       return {
         ...prev, // 解構為 [name]: sign
         [name]:
-          sign === "increase" ? conditions[name] + 1 : conditions[name] - 1,
+          sign === 'increase' ? conditions[name] + 1 : conditions[name] - 1,
       };
     });
   };
   // 想要去哪input
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState('');
+  console.log(destination, dates, conditions);
   return (
     <div className="headerSearchBar">
       <div className="searchBarItem-1">
@@ -67,20 +74,23 @@ export const SearchBar = () => {
           className="searchText"
           onClick={() => setOpenConditions(!openConditions)}
         >
-          成人 {conditions.adult} 位，小孩 {conditions.child} 位，房間{" "}
+          成人 {conditions.adult} 位，小孩 {conditions.child} 位，房間{' '}
           {conditions.room}
         </span>
         {openConditions && (
-          <div className="conditionsContainer">
+          <div className="conditionsContainer-homepage">
+            <button className="close" onClick={() => setOpenConditions(false)}>
+              X
+            </button>
             <div className="condition">
               成人
               <div className="conditionCounter">
-                <button onClick={() => handleCounter("adult", "increase")}>
+                <button onClick={() => handleCounter('adult', 'increase')}>
                   +
                 </button>
                 <span>{conditions.adult}</span>
                 <button
-                  onClick={() => handleCounter("adult", "decrease")}
+                  onClick={() => handleCounter('adult', 'decrease')}
                   disabled={conditions.adult <= 1}
                 >
                   -
@@ -90,12 +100,12 @@ export const SearchBar = () => {
             <div className="condition">
               小孩
               <div className="conditionCounter">
-                <button onClick={() => handleCounter("child", "increase")}>
+                <button onClick={() => handleCounter('child', 'increase')}>
                   +
                 </button>
                 <span>{conditions.child}</span>
                 <button
-                  onClick={() => handleCounter("child", "decrease")}
+                  onClick={() => handleCounter('child', 'decrease')}
                   disabled={conditions.child <= 0}
                 >
                   -
@@ -105,12 +115,12 @@ export const SearchBar = () => {
             <div className="condition">
               房間
               <div className="conditionCounter">
-                <button onClick={() => handleCounter("room", "increase")}>
+                <button onClick={() => handleCounter('room', 'increase')}>
                   +
                 </button>
                 <span>{conditions.room}</span>
                 <button
-                  onClick={() => handleCounter("room", "decrease")}
+                  onClick={() => handleCounter('room', 'decrease')}
                   disabled={conditions.room <= 1}
                 >
                   -
@@ -126,8 +136,8 @@ export const SearchBar = () => {
           onClick={() => setOpenCalendar(true)}
         />
         <span className="searchText" onClick={() => setOpenCalendar(true)}>
-          {format(dates[0].startDate, "MM/dd/yy")} -{" "}
-          {format(dates[0].endDate, "MM/dd/yy")}
+          {format(dates[0].startDate, 'yy/MM/dd')} -{' '}
+          {format(dates[0].endDate, 'yy/MM/dd')}
         </span>
       </div>
       {openCalendar && (
@@ -144,7 +154,7 @@ export const SearchBar = () => {
               className="calendarTest"
               minDate={new Date()}
               ranges={dates}
-              locale={locales["zhTW"]}
+              locale={locales['zhTW']}
               onShownDateChange={true}
               preventSnapRefocus={true}
             />
@@ -153,9 +163,9 @@ export const SearchBar = () => {
                 className="selectorText"
                 onClick={() => setOpenCalendar(true)}
               >
-                {format(dates[0].startDate, "yy/MM/dd")} -{"  "}
-                {format(dates[0].endDate, "yy/MM/dd")}
-                {"  "}共 {selectRage(dates[0].startDate, dates[0].endDate)} 晚
+                {format(dates[0].startDate, 'yy/MM/dd')} -{'  '}
+                {format(dates[0].endDate, 'yy/MM/dd')}
+                {'  '}共 {selectRage(dates[0].startDate, dates[0].endDate)} 晚
               </span>
               <button
                 onClick={() => setOpenCalendar(false)}
@@ -167,7 +177,9 @@ export const SearchBar = () => {
           </div>
         </div>
       )}
-      <button className="searchBarBtn">搜尋</button>
+      <button className="searchBarBtn" onClick={handleSearchBarSubmit}>
+        搜尋
+      </button>
     </div>
   );
 };

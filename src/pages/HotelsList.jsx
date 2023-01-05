@@ -6,25 +6,26 @@ import * as locales from 'react-date-range/dist/locale';
 import { DateRange } from 'react-date-range';
 import './HotelsList.scss';
 import { SearchItem } from '../components/ListItem/SearchItem';
+import { useLocation } from 'react-router-dom';
 
 const HotelsList = () => {
+  // 接收來自SearchBar的資料
+  const searchBarData = useLocation();
+  console.log(searchBarData);
   // 日期狀態開關、資料
   const [openCalendar, setOpenCalendar] = useState(false);
-  // 計算選擇的天數，共有幾個晚上
+  // 想要去哪input
+  const [destination, setDestination] = useState(
+    searchBarData.state?.destination
+  );
+  const [dates, setDates] = useState(searchBarData.state?.dates);
+  // 人數狀態開關、資料、計算
+  const [openConditions, setOpenConditions] = useState(false);
+  const [conditions, setConditions] = useState(searchBarData.state?.conditions);
   function selectRage(date1, date2) {
     const dateSelected = (date2 - date1) / 1000 / 60 / 60 / 24;
     return dateSelected;
   }
-  const [dates, setDates] = useState([
-    { startDate: new Date(), endDate: new Date(), key: 'selection' },
-  ]);
-  // 人數狀態開關、資料、計算
-  const [openConditions, setOpenConditions] = useState(false);
-  const [conditions, setConditions] = useState({
-    adult: 1,
-    child: 0,
-    room: 1,
-  });
   const handleCounter = (name, sign) => {
     // 第一個參數判斷是誰要被計算
     // 第二個參數判斷是加還是減
@@ -36,8 +37,6 @@ const HotelsList = () => {
       };
     });
   };
-  // 想要去哪input
-  const [destination, setDestination] = useState('');
   return (
     <div>
       <MainMenu />
@@ -50,7 +49,7 @@ const HotelsList = () => {
               <br />
               <input
                 type="input"
-                placeholder="想要去哪裡？"
+                placeholder={destination === '' ? '想要去哪裡？' : destination}
                 className="searchInput"
                 onChange={(e) => {
                   setDestination(e.target.value);
