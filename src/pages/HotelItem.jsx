@@ -7,6 +7,8 @@ import {
   faLocationDot,
   faPeopleGroup,
   faHeartCircleCheck,
+  faWifi,
+  faSmokingBan,
 } from '@fortawesome/free-solid-svg-icons';
 
 const HotelItem = () => {
@@ -95,7 +97,34 @@ const HotelItem = () => {
             )}
           </div>
         </div>
-        <div className="hotel-des"></div>
+        <div className="hotel-des">
+          <div className="hotel-desText">
+            H& 台南微醺文旅 I老宅古城 漫遊體驗I H& tainan weshare hotel
+            <br />
+            <b>自 2017 年 1 月 10 日開始接待 Booking.com 的旅客入住。</b>
+            <br />
+            預訂H& 台南微醺文旅 I老宅古城 漫遊體驗I H& tainan weshare hotel可享 Genius 折扣！
+            <br />只要登入，預訂此住宿即可省一筆。
+            H& 台南微醺文旅 I老宅古城漫遊體驗I H& tainan weshare hotel 位在台南，提供 WiFi（免費）、空調、共用休息室和花園，距離台南孔廟 1.3 公里，距離赤崁樓 1.6 公里。
+            部分房型提供附淋浴設施、拖鞋、吹風機和免費盥洗用品的私人衛浴。
+            <br />
+            H& 台南微醺文旅 I老宅古城漫遊體驗I H& tainan weshare hotel 附近的人氣景點包括藍晒圖文創園區、新光三越台南新天地和林百貨。最近的機場是台南機場，距離這間住宿 10 公里。
+            此區為台南的人氣推薦區域（依據真實住客評語）
+            獨行旅客特別喜歡這個位置－並給他們的單獨住宿體驗 9.4 分
+            <h1>熱門設施</h1>
+            <hr />
+            <p className='textIcon'><FontAwesomeIcon icon={faWifi} className="wifi" />
+              免費無線網路 <FontAwesomeIcon icon={faSmokingBan} />禁菸客房</p>
+          </div>
+          <div className="hotel-desPrice">
+            <h2>住宿特色</h2>
+            <p>入住 5 晚的最佳選擇！
+              此住宿位於台南評分最高的地區，地理位置評分高達 9.3 分
+              深受獨行旅客歡迎</p>
+            <h2>TWD 6,240</h2>
+            <button>現在就預訂</button>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
