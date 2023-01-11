@@ -97,3 +97,37 @@
     }
   }
 }
+
+.hotel-imgwrapper {
+  position: relative;
+  .hotelImg {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    .Imgwrap:first-child {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .Imgwrap {
+      position: relative;
+      border-radius: 2px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      .more {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+}

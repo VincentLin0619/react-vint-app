@@ -71,7 +71,30 @@ const HotelItem = () => {
             </div>
           </div>
         </div>
-        <div className="hotel-imgwrapper"></div>
+        <div className="hotel-imgwrapper">
+          <div className="hotelImg">
+            {photos.slice(0, 6).map(
+              (
+                item,
+                i //不管他再怎麼多 如果剛好有到7張照片就可以觀看更多，並往上加
+              ) =>
+                i >= 5 ? (
+                  <div className="Imgwrap" key={i}>
+                    <div className="more">
+                      {photos.length > 6
+                        ? `+${photos.length - 6}張照片`
+                        : '觀看更多'}
+                    </div>
+                    <img src={item.src} alt="img" />
+                  </div>
+                ) : (
+                  <div className="Imgwrap" key={i}>
+                    <img src={item.src} alt="img" />
+                  </div>
+                )
+            )}
+          </div>
+        </div>
         <div className="hotel-des"></div>
       </div>
       <Footer />
