@@ -29,14 +29,13 @@
   }
   .infoContainer {
     border: 1px lightgrey solid;
-    // width: 100%;
-    height: 30hv;
-    display: flex;
-    align-items: center;
     padding: 15px;
     margin: 10px;
-    svg {
+    span {
       display: flex;
+      align-items: center;
+    }
+    svg {
       color: rgb(251, 144, 4);
       background-color: bisque;
       padding: 10px;

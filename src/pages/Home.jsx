@@ -29,8 +29,7 @@ const Home = () => {
             此為出差行程
           </div>
           <div className="infoContainer">
-            <FontAwesomeIcon icon={faInfoCircle} />
-            獲得所需建議。在出發之前，查看最新的新冠肺炎（COVID-19）相關限制。瞭解更多
+            <span><FontAwesomeIcon icon={faInfoCircle} />獲得所需建議。在出發之前，查看最新的新冠肺炎（COVID-19）相關限制。瞭解更多</span>
           </div>
         </div>
         <Discount />
