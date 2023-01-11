@@ -1,0 +1,99 @@
+.hotel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.hotel-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  gap: 7px;
+  .hotel-headerbtn {
+    display: flex;
+    gap: 5px;
+    button {
+      border: none;
+      border-radius: 2px;
+      background-color: rgb(154, 218, 169);
+      padding: 7px;
+      color: teal;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+.hotel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    //地標顏色 //愛心顏色...都改成同一顏色
+    color: #f65050;
+  }
+  .hotel-title_l {
+    span {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .tag {
+      color: white;
+      background-color: #00d8ff;
+      border-radius: 2px;
+      padding: 2px;
+    }
+    .hotelName {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .info {
+      display: inline-flex;
+      align-items: center;
+      background-color: #cbe5d8;
+      font-size: 12px;
+      border-radius: 15px;
+      padding: 3px 10px 3px 0px; //0px是為了讓svg小球的下層左邊的區塊內縮
+      svg {
+        width: 15px;
+        height: 15px;
+        padding: 2px;
+        color: var(--primary-color);
+        background-color: #fff;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+      span {
+        margin: auto;
+        vertical-align: middle;
+      }
+    }
+    .address {
+      font-size: 1rem;
+      a {
+        margin: 0px 5px;
+        font-size: 0.8rem;
+        color: #02a3bf;
+        text-decoration: none;
+      }
+    }
+  }
+  .hotel-title_r {
+    display: flex;
+    flex-direction: column; //有加這個
+    align-items: flex-end; //aic 變成當jc flex-end用
+    button {
+      border: none;
+      background-color: var(--primary-color);
+      padding: 5px 20px;
+      font-size: 16px;
+      border-radius: 2px;
+      color: white;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}

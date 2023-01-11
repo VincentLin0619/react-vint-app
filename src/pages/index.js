@@ -1,4 +1,5 @@
-import Home from "./Home";
-import HotelsList from "./HotelsList";
+import Home from './Home';
+import HotelsList from './HotelsList';
+import HotelItem from './HotelItem';
 
-export { Home, HotelsList };
+export { Home, HotelsList, HotelItem };

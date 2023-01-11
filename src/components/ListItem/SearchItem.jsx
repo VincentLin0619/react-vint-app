@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchItem.scss';
-
+import { Link } from 'react-router-dom';
 export const SearchItem = ({ active }) => {
   return (
     <div className={`infoContainer ${active}`}>
@@ -39,7 +39,9 @@ export const SearchItem = ({ active }) => {
             <span>含稅與其他費用</span>
           </div>
           <div className="infoFooter_R-bottom">
-            <button>查看客房供應狀況</button>
+            <Link to="/hotelslist/1">
+              <button>查看客房供應狀況</button>
+            </Link>
           </div>
         </div>
       </div>
